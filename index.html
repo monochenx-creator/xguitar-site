@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X Guitar — Privacy &amp; Support</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1c1c1e; --dim: #6b6b70;
+    --line: #e5e5ea; --accent: #2f4fa2; --card: #f7f7f9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0d0f1a; --fg: #ececf1; --dim: #9a9aa3;
+            --line: #26283a; --accent: #8fa8ff; --card: #15182a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+               "Hiragino Sans GB", "Microsoft YaHei", sans-serif; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 22px 80px; }
+  header { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+  .mark { width: 52px; height: 52px; border-radius: 12px; flex: none;
+          background: linear-gradient(#212f68, #090b18); display: grid; place-items: center; }
+  .mark svg { width: 30px; height: 30px; }
+  h1 { font-size: 27px; margin: 0; letter-spacing: -.01em; }
+  .sub { color: var(--dim); margin: 2px 0 0; font-size: 15px; }
+  nav { margin: 26px 0 40px; display: flex; gap: 10px; flex-wrap: wrap; }
+  nav a { font-size: 14px; text-decoration: none; color: var(--accent);
+          border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; }
+  h2 { font-size: 20px; margin: 44px 0 6px; letter-spacing: -.01em; }
+  h3 { font-size: 16px; margin: 26px 0 4px; }
+  p, li { color: var(--fg); }
+  .lead { font-size: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line);
+          border-radius: 14px; padding: 16px 18px; margin: 18px 0; }
+  ol, ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  a { color: var(--accent); }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 56px 0 40px; }
+  footer { color: var(--dim); font-size: 14px; margin-top: 56px; }
+  code { background: var(--card); border: 1px solid var(--line);
+         border-radius: 5px; padding: 1px 6px; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="mark">
+    <svg viewBox="0 0 1024 1024" aria-hidden="true">
+      <path fill="#fff" d="M512 187a162 162 0 0 0-162 162v116a162 162 0 0 0 324 0V349a162 162 0 0 0-162-162Z"
+            opacity="0"/>
+      <g fill="#fff">
+        <path d="M350 187h0a0 0 0 0 1 0 0v278a162 162 0 0 0 324 0V187"
+              fill="none" stroke="#fff" stroke-width="76" stroke-linecap="round"/>
+        <rect x="474" y="560" width="76" height="260" rx="38"/>
+      </g>
+    </svg>
+  </div>
+  <div>
+    <h1>X Guitar</h1>
+    <p class="sub">Guitar tuner &amp; chord sheets · 调音器与弹唱谱</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#privacy">Privacy Policy</a>
+  <a href="#support">Support</a>
+  <a href="#zh">中文</a>
+</nav>
+
+<h2 id="privacy">Privacy Policy</h2>
+<p class="sub">Last updated: 19 September 2026</p>
+
+<p class="lead"><strong>X Guitar collects nothing about you.</strong> No accounts, no analytics,
+no crash reporting, no third-party SDKs of any kind.</p>
+
+<h3>Where your data lives</h3>
+<p>Your chord sheets, setlists and preferences live only on your own devices. If you turn on
+iCloud, they sync between your devices through <em>your own</em> iCloud account — that channel is
+between you and Apple. We cannot see their contents and keep no copy on any server.</p>
+
+<h3>Microphone</h3>
+<p>The tuner listens to your guitar to detect pitch. Audio is processed on the device in real
+time. <strong>Nothing is recorded, stored or uploaded.</strong></p>
+
+<h3>Camera and photos</h3>
+<p>Sheet recognition can use the camera or your photo library. Recognition runs entirely on your
+device, with no network access. Photos are never uploaded anywhere automatically.</p>
+
+<h3>The three places the app touches the network</h3>
+<div class="card">
+<ol>
+  <li><strong>Pasting a link to a sheet.</strong> Fetches only the page you pasted, over HTTPS,
+      without cookies or credentials.</li>
+  <li><strong>Recognising with your own model provider (optional).</strong> Only if you have
+      configured an API key for a provider <em>and</em> explicitly choose to use it will an image
+      be uploaded — to the provider you named. We are not an intermediary; nothing passes
+      through us.</li>
+  <li><strong>iCloud sync (optional).</strong> Your own account, as described above.</li>
+</ol>
+</div>
+<p>Each one happens only after you ask for it. The app does not otherwise use the network.</p>
+
+<h3>Your API key</h3>
+<p>If you configure a model provider's API key it is stored in your device's system Keychain,
+restricted to that device and readable only after unlock. It is not synced to iCloud, never
+appears in logs or crash reports, and is never sent anywhere except the provider you named.</p>
+
+<h3>Children</h3>
+<p>This app is not directed at children under 13 and does not knowingly collect their
+information — it collects no one's information.</p>
+
+<h2 id="support">Support</h2>
+<p>Questions, bug reports, feature requests, or anything about privacy:</p>
+<div class="card">
+  <p style="margin:0"><strong>Email:</strong>
+  <a href="mailto:monochenx@icloud.com">monochenx@icloud.com</a></p>
+</div>
+<p>Please include your device model and iOS/macOS version — it makes a bug far easier to find.</p>
+
+<hr>
+
+<h2 id="zh">隐私政策（中文）</h2>
+<p class="sub">最后更新：2026 年 9 月 19 日</p>
+
+<p class="lead"><strong>X Guitar 不收集你的任何个人信息。</strong>没有账号，没有统计，
+没有崩溃上报，没有任何第三方 SDK。</p>
+
+<h3>你的数据在哪</h3>
+<p>你的谱子、歌单和偏好设置只存在你自己的设备上。如果你开启了 iCloud，它们会通过
+<em>你自己的</em> iCloud 账户在你的设备之间同步——这条通道属于 Apple 和你，我们看不到里面的内容，
+也没有任何服务器保存它们的副本。</p>
+
+<h3>麦克风</h3>
+<p>调音器需要听你的琴声来判断音高。声音只在设备上实时处理，<strong>不录音、不保存、不上传</strong>。</p>
+
+<h3>相机与照片</h3>
+<p>识谱功能可以用相机拍谱、或从相册选图。识别全程在你的设备上完成，不联网。
+照片不会被自动上传到任何地方。</p>
+
+<h3>三处会联网的地方，每一处都要你先动手</h3>
+<div class="card">
+<ol>
+  <li><strong>粘一条链接取谱</strong>：只去你粘的那一页，走 HTTPS，不带 cookie、不带任何账号信息。</li>
+  <li><strong>用你自己配置的模型识谱（可选）</strong>：只有你主动配置了某个服务商的 API key、
+      并且主动选择用它识别时，图片才会上传到<em>你指定的那个服务商</em>。我们不是中转方，
+      数据不经过我们。</li>
+  <li><strong>iCloud 同步（可选）</strong>：走你自己的账户，见上。</li>
+</ol>
+</div>
+<p>除此之外，这个 App 不联网。</p>
+
+<h3>你的 API key</h3>
+<p>如果你配置了模型服务商的 API key，它保存在你设备的系统钥匙串里，仅限本机、仅在解锁后可读。
+它不会同步到 iCloud，不会出现在日志或崩溃报告里，也不会被发送到除你指定的那个服务商之外的任何地方。</p>
+
+<h3>儿童</h3>
+<p>本 App 不面向 13 岁以下儿童，也不会有意收集他们的信息——事实上它不收集任何人的信息。</p>
+
+<h3>联系</h3>
+<p>任何问题请邮件联系 <a href="mailto:monochenx@icloud.com">monochenx@icloud.com</a>。</p>
+
+<footer>© 2026 X Guitar</footer>
+
+</div>
+</body>
+</html>
