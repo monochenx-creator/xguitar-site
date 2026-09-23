@@ -40,6 +40,8 @@
   footer { color: var(--dim); font-size: 14px; margin-top: 56px; }
   code { background: var(--card); border: 1px solid var(--line);
          border-radius: 5px; padding: 1px 6px; font-size: 14px; }
+  /* 长域名（generativelanguage.googleapis.com）在手机宽度下会把整页横向撑出滚动条 */
+  code { overflow-wrap: anywhere; }
 </style>
 </head>
 <body>
@@ -70,7 +72,7 @@
 </nav>
 
 <h2 id="privacy">Privacy Policy</h2>
-<p class="sub">Last updated: 19 September 2026</p>
+<p class="sub">Last updated: 23 September 2026</p>
 
 <p class="lead"><strong>X Guitar collects nothing about you.</strong> No accounts, no analytics,
 no crash reporting, no third-party SDKs of any kind.</p>
@@ -85,27 +87,69 @@ between you and Apple. We cannot see their contents and keep no copy on any serv
 time. <strong>Nothing is recorded, stored or uploaded.</strong></p>
 
 <h3>Camera and photos</h3>
-<p>Sheet recognition can use the camera or your photo library. Recognition runs entirely on your
-device, with no network access. Photos are never uploaded anywhere automatically.</p>
+<p>Sheet recognition can use the camera or your photo library, and the camera can also scan a
+sheet's QR code shown on someone else's screen. Both run entirely on your device, with no network
+access. Photos are never uploaded anywhere automatically.</p>
 
 <h3>The three places the app touches the network</h3>
 <div class="card">
 <ol>
   <li><strong>Pasting a link to a sheet.</strong> Fetches only the page you pasted, over HTTPS,
       without cookies or credentials.</li>
-  <li><strong>Recognising with your own model provider (optional).</strong> Only if you have
-      configured an API key for a provider <em>and</em> explicitly choose to use it will an image
-      be uploaded — to the provider you named. We are not an intermediary; nothing passes
-      through us.</li>
+  <li><strong>Recognising or refining with your own model provider (optional).</strong> Only if
+      you have configured an API key for a provider <em>and</em> explicitly choose to use it does
+      anything leave your device — sent directly to that provider, with your key. Depending on
+      what you asked for, that is the page images together with the text recognised on your
+      device (which includes the lyrics), or only that text. Before the first upload to a
+      provider the app names the exact server and asks you to confirm. We are not an
+      intermediary; nothing passes through us.</li>
   <li><strong>iCloud sync (optional).</strong> Your own account, as described above.</li>
 </ol>
 </div>
 <p>Each one happens only after you ask for it. The app does not otherwise use the network.</p>
 
+<h3>Which providers can receive it</h3>
+<p>Only the one you pick, and only from this list. What happens to what you send is governed by
+that provider — its privacy policy and the API terms you accepted when you created your key. We
+have no access to it.</p>
+<div class="card">
+<ul>
+  <li><strong>OpenAI</strong> — <code>api.openai.com</code> — <a href="https://openai.com/policies/privacy-policy/">privacy policy</a></li>
+  <li><strong>Google Gemini</strong> — <code>generativelanguage.googleapis.com</code> — <a href="https://policies.google.com/privacy">privacy policy</a></li>
+  <li><strong>Anthropic Claude</strong> — <code>api.anthropic.com</code> — <a href="https://www.anthropic.com/legal/privacy">privacy policy</a></li>
+  <li><strong>Zhipu GLM</strong> — <code>open.bigmodel.cn</code> — <a href="https://docs.bigmodel.cn/cn/terms/privacy-policy">privacy policy</a></li>
+  <li><strong>Qwen (Alibaba Cloud Model Studio)</strong> — <code>dashscope.aliyuncs.com</code> — <a href="https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202107091605_49213.html">privacy policy</a></li>
+  <li><strong>Kimi (Moonshot AI)</strong> — <code>api.moonshot.cn</code> — <a href="https://platform.kimi.com/docs/agreement/userprivacy">privacy policy</a></li>
+  <li><strong>Doubao (Volcengine Ark)</strong> — <code>ark.cn-beijing.volces.com</code> — <a href="https://docs.volcengine.com/docs/Legalagreements/VolcanoEnginesPrivacyPolicy?lang=zh">privacy policy</a></li>
+  <li><strong>DeepSeek</strong> — <code>api.deepseek.com</code> — <a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html">privacy policy</a></li>
+</ul>
+</div>
+<p>Free tiers can be treated differently. For example, <a href="https://ai.google.dev/gemini-api/terms">Google's Gemini API
+terms</a> say that on the free tier, what you submit may be used to improve Google's products and
+may be read by human reviewers. Check your provider's terms before sending anything you would
+rather keep private.</p>
+
 <h3>Your API key</h3>
 <p>If you configure a model provider's API key it is stored in your device's system Keychain,
 restricted to that device and readable only after unlock. It is not synced to iCloud, never
 appears in logs or crash reports, and is never sent anywhere except the provider you named.</p>
+
+<h3>Keeping, deleting, and withdrawing consent</h3>
+<ul>
+  <li><strong>We keep nothing.</strong> There is no server of ours, so there is nothing for us to
+      retain or delete.</li>
+  <li><strong>Your sheets and setlists:</strong> delete them in the app. If you use iCloud they
+      also live in the “X Guitar” folder of your iCloud Drive, where you can delete them too.
+      Deleting the app removes the sheets and settings it stored on that device.</li>
+  <li><strong>Your API key, and your consent to upload:</strong> Settings → Recognize sheet →
+      Recognition model… → Delete key. This also withdraws your consent for that provider: the
+      app asks again before anything is sent there. On iPhone and iPad a key in the Keychain can
+      outlive the app, so delete the key in the app before deleting the app.</li>
+  <li><strong>Microphone, camera and photos:</strong> withdraw permission at any time in the
+      system Settings app.</li>
+  <li><strong>Anything already sent to a provider</strong> is held by that provider, under its own
+      policy. Ask them to delete it; we cannot reach it.</li>
+</ul>
 
 <h3>Children</h3>
 <p>This app is not directed at children under 13 and does not knowingly collect their
@@ -122,7 +166,7 @@ information — it collects no one's information.</p>
 <hr>
 
 <h2 id="zh">隐私政策（中文）</h2>
-<p class="sub">最后更新：2026 年 9 月 19 日</p>
+<p class="sub">最后更新：2026 年 9 月 23 日</p>
 
 <p class="lead"><strong>X Guitar 不收集你的任何个人信息。</strong>没有账号，没有统计，
 没有崩溃上报，没有任何第三方 SDK。</p>
@@ -136,24 +180,57 @@ information — it collects no one's information.</p>
 <p>调音器需要听你的琴声来判断音高。声音只在设备上实时处理，<strong>不录音、不保存、不上传</strong>。</p>
 
 <h3>相机与照片</h3>
-<p>识谱功能可以用相机拍谱、或从相册选图。识别全程在你的设备上完成，不联网。
-照片不会被自动上传到任何地方。</p>
+<p>识谱功能可以用相机拍谱、或从相册选图；相机还可以扫别人屏幕上的谱二维码。两件事都在你的设备上完成，
+不联网。照片不会被自动上传到任何地方。</p>
 
 <h3>三处会联网的地方，每一处都要你先动手</h3>
 <div class="card">
 <ol>
   <li><strong>粘一条链接取谱</strong>：只去你粘的那一页，走 HTTPS，不带 cookie、不带任何账号信息。</li>
-  <li><strong>用你自己配置的模型识谱（可选）</strong>：只有你主动配置了某个服务商的 API key、
-      并且主动选择用它识别时，图片才会上传到<em>你指定的那个服务商</em>。我们不是中转方，
-      数据不经过我们。</li>
+  <li><strong>用你自己配置的模型识谱或润色（可选）</strong>：只有你主动配置了某个服务商的 API key、
+      并且主动选择用它时，才会有东西离开你的设备——用你的 key，直接发给那个服务商。
+      视你要做的事而定，发出去的是那几页图片连同本机识别出来的文字（里面就是歌词），或者只有那段文字。
+      第一次往某个服务商上传之前，App 会说清楚发到哪一台服务器，并请你确认。
+      我们不是中转方，数据不经过我们。</li>
   <li><strong>iCloud 同步（可选）</strong>：走你自己的账户，见上。</li>
 </ol>
 </div>
 <p>除此之外，这个 App 不联网。</p>
 
+<h3>可能收到它的服务商</h3>
+<p>只有你选的那一家，而且只能是下面这几家之一。你发过去的东西怎么处理，由那家服务商决定——
+看它的隐私政策，以及你开 key 时同意的 API 条款。我们接触不到。</p>
+<div class="card">
+<ul>
+  <li><strong>OpenAI</strong> — <code>api.openai.com</code> — <a href="https://openai.com/policies/privacy-policy/">隐私政策</a></li>
+  <li><strong>Google Gemini</strong> — <code>generativelanguage.googleapis.com</code> — <a href="https://policies.google.com/privacy">隐私政策</a></li>
+  <li><strong>Anthropic Claude</strong> — <code>api.anthropic.com</code> — <a href="https://www.anthropic.com/legal/privacy">隐私政策</a></li>
+  <li><strong>智谱 GLM</strong> — <code>open.bigmodel.cn</code> — <a href="https://docs.bigmodel.cn/cn/terms/privacy-policy">隐私政策</a></li>
+  <li><strong>通义千问（阿里云百炼）</strong> — <code>dashscope.aliyuncs.com</code> — <a href="https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202107091605_49213.html">隐私政策</a></li>
+  <li><strong>Kimi（月之暗面）</strong> — <code>api.moonshot.cn</code> — <a href="https://platform.kimi.com/docs/agreement/userprivacy">隐私政策</a></li>
+  <li><strong>豆包（火山方舟）</strong> — <code>ark.cn-beijing.volces.com</code> — <a href="https://docs.volcengine.com/docs/Legalagreements/VolcanoEnginesPrivacyPolicy?lang=zh">隐私政策</a></li>
+  <li><strong>DeepSeek</strong> — <code>api.deepseek.com</code> — <a href="https://cdn.deepseek.com/policies/zh-CN/deepseek-privacy-policy.html">隐私政策</a></li>
+</ul>
+</div>
+<p>免费额度可能另有规矩。比如 <a href="https://ai.google.dev/gemini-api/terms">Google Gemini API 的附加条款</a>写明：
+免费档下提交的内容可能被用来改进 Google 的产品，也可能被人工审核员看到。不想让人看到的东西，
+发之前先看一眼你那家服务商的条款。</p>
+
 <h3>你的 API key</h3>
 <p>如果你配置了模型服务商的 API key，它保存在你设备的系统钥匙串里，仅限本机、仅在解锁后可读。
 它不会同步到 iCloud，不会出现在日志或崩溃报告里，也不会被发送到除你指定的那个服务商之外的任何地方。</p>
+
+<h3>保存、删除与撤回同意</h3>
+<ul>
+  <li><strong>我们什么都不保存。</strong>我们没有服务器，所以也没有什么需要我们来保留或删除。</li>
+  <li><strong>你的谱和歌单</strong>：在 App 里删除即可。如果你用了 iCloud，它们也在你 iCloud 云盘的
+      「X Guitar」文件夹里，在那里同样可以删除。删除 App 会一并删除它存在这台设备上的谱和设置。</li>
+  <li><strong>你的 API key，以及你对上传的同意</strong>：设置 → 识谱 → 识谱模型… → 删除 key。
+      这同时撤回你对那个服务商的同意：之后再要往那里发送任何东西，App 会重新问你。
+      在 iPhone 和 iPad 上，钥匙串里的 key 可能在删除 App 之后仍然留着，所以请先在 App 里删掉 key，再删 App。</li>
+  <li><strong>麦克风、相机和照片</strong>：随时可以在系统「设置」里收回权限。</li>
+  <li><strong>已经发给服务商的内容</strong>由那个服务商按它自己的政策保管。要删除请联系它；我们够不着。</li>
+</ul>
 
 <h3>儿童</h3>
 <p>本 App 不面向 13 岁以下儿童，也不会有意收集他们的信息——事实上它不收集任何人的信息。</p>
