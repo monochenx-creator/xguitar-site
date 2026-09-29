@@ -1,0 +1,26 @@
+{title: River Fog}
+{artist: X Guitar Sample}
+{key: Gm}
+{tempo: 66}
+{time: 3/4}
+{start_of_intro: Intro}
+[Gm] [Gm/Bb] [Cm] [D7/F#]
+{end_of_intro}
+{start_of_verse: Verse 1}
+[Gm]Fog comes down the [Dm/F]river slow
+[Eb]Swallows every [Bb]light I know
+[Gm]Boats are tied and [Gm/Bb]nobody rows
+[Cm]Only the water [D7/F#]moves
+{end_of_verse}
+{start_of_chorus: Chorus}
+[Eb]Stay a while, the [Bb]dark is thin
+[Gm]Morning's waiting [Dm/F]just within
+[Eb]Stay a while and [Bb]breathe it in
+[Cm]Fog will lift when it [D7/F#]will
+{end_of_chorus}
+{start_of_verse: Verse 2}
+[Gm]Lanterns hang where the [Dm/F]bridge bends low
+[Eb]Someone's singing [Bb]soft and slow
+[Gm]I don't know the [Gm/Bb]words they know
+[Cm]Still I hum the [D7/F#]tune
+{end_of_verse}
